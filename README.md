@@ -5,7 +5,7 @@ Home: http://www.unidata.ucar.edu/software/udunits/
 
 Package license: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: The UDUNITS package supports units of physical quantities.
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/udunits2-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/udunits2-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/udunits2-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/udunits2-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/udunits2-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/udunits2-feedstock/branch/master)
