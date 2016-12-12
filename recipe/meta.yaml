@@ -33,7 +33,7 @@ test:
     commands:
         - udunits2 -h
         - udunits2 -H meter -W miles
-        - conda inspect linkages udunits2 --name _test  # [linux]
+        - conda inspect linkages udunits2 --prefix $PREFIX  # [linux]
 
 about:
     home: http://www.unidata.ucar.edu/software/udunits/
