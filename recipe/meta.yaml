@@ -1,13 +1,14 @@
 {% set version = "2.2.23" %}
+{% set commit = "d3540a8077f83b87490bec71191c8d3060a01ee1" %}
 
 package:
   name: udunits2
   version: {{ version }}
 
 source:
-  fn: v{{ version }}.tar.gz
-  url: ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-{{ version }}.tar.gz
-  sha256: 797227219df63df5e6cca3e3ca98245781e56f2334bf73649bee63b4b31c4979
+  fn: {{ commit }}.tar.gz
+  url: https://github.com/Unidata/UDUNITS-2/archive/{{ commit }}.tar.gz
+  sha256: 26c893864288d98fe876c43dc1239a8ff2d07fdd4ae027d2d30700a77a4ae1d8
 
 build:
   number: 0
