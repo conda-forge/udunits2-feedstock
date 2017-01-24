@@ -1,47 +1,57 @@
+{% set version = "2.2.23" %}
+{% set commit = "d3540a8077f83b87490bec71191c8d3060a01ee1" %}
+
 package:
-    name: udunits2
-    version: 2.2.20
+  name: udunits2
+  version: {{ version }}
 
 source:
-    fn: v2.2.20.tar.gz
-    url: https://github.com/Unidata/UDUNITS-2/archive/v2.2.20.tar.gz
-    sha1: a0d30024af16749a4a5ca60133b32735ae52f9e2
+  fn: {{ commit }}.tar.gz
+  url: https://github.com/Unidata/UDUNITS-2/archive/{{ commit }}.tar.gz
+  sha256: 26c893864288d98fe876c43dc1239a8ff2d07fdd4ae027d2d30700a77a4ae1d8
 
 build:
-    number: 2
-    detect_binary_files_with_prefix: true
-    features:
-        - vc9  # [win and py27]
-        - vc10  # [win and py34]
-        - vc14  # [win and py35]
+  number: 0
+  skip:  True  # [py>35]
+  detect_binary_files_with_prefix: true
+  features:
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py>=35]
 
 requirements:
-    build:
-        - python  # [win]
-        - cmake  # [win]
-        - automake  # [not win]
-        - libtool  # [not win]
-        - texinfo  # [not win]
-        - expat
-    run:
-        - expat
+  build:
+    - python  # [win]
+    - cmake  # [win]
+    - automake  # [not win]
+    - libtool  # [not win]
+    - texinfo  # [not win]
+    - expat
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
+  run:
+    - expat
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
 
 test:
-    requires:
-        # Tests don't really need Python, but conda throws
-        - python {{ environ['PY_VER'] + '*' }}  # [win]
-    commands:
-        - udunits2 -h
-        - udunits2 -H meter -W miles
-        - conda inspect linkages udunits2 --prefix $PREFIX  # [linux]
+  commands:
+    - udunits2 -h
+    - udunits2 -H meter -W miles
+    - conda inspect linkages -p $PREFIX udunits2  # [not win]
+    - conda inspect objects -p $PREFIX udunits2  # [osx]
 
 about:
-    home: http://www.unidata.ucar.edu/software/udunits/
-    license: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT
-    summary: The UDUNITS package supports units of physical quantities.
+  home: http://www.unidata.ucar.edu/software/udunits/
+  license: UCAR OSI approved
+  license_file: COPYRIGHT
+  summary: 'The UDUNITS package supports units of physical quantities.'
 
 extra:
-    recipe-maintainers:
-        - kwilcox
-        - ocefpaf
-        - pelson
+  recipe-maintainers:
+    - kwilcox
+    - ocefpaf
+    - pelson
+    - dkillick

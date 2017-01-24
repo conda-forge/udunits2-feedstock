@@ -3,7 +3,7 @@ About udunits2
 
 Home: http://www.unidata.ucar.edu/software/udunits/
 
-Package license: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT
+Package license: UCAR OSI approved
 
 Feedstock license: BSD 3-Clause
 
