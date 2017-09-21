@@ -39,7 +39,7 @@ requirements:
 test:
   commands:
     - udunits2 -h
-    - udunits2 -H meter -W miles
+    - udunits2 -H meter -W miles  # [not win]
     - conda inspect linkages -p $PREFIX udunits2  # [not win]
     - conda inspect objects -p $PREFIX udunits2  # [osx]
 
