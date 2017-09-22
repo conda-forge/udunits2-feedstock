@@ -11,13 +11,13 @@ source:
   sha256: 26c893864288d98fe876c43dc1239a8ff2d07fdd4ae027d2d30700a77a4ae1d8
 
 build:
-  number: 0
-  skip:  True  # [py>35]
+  number: 1
   detect_binary_files_with_prefix: true
+  skip: True  # [win and py35]
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
-    - vc14  # [win and py>=35]
+    - vc14  # [win and (py35 and py36)]
 
 requirements:
   build:
@@ -29,17 +29,17 @@ requirements:
     - expat
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 and py36)]
   run:
     - expat
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 and py36)]
 
 test:
   commands:
     - udunits2 -h
-    - udunits2 -H meter -W miles
+    - udunits2 -H meter -W miles  # [not win]
     - conda inspect linkages -p $PREFIX udunits2  # [not win]
     - conda inspect objects -p $PREFIX udunits2  # [osx]
 
