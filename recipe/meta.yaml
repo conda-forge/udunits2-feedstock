@@ -5,9 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: udunits2-{{ version }}.tar.gz
   url: https://github.com/Unidata/UDUNITS-2/archive/v{{ version }}.tar.gz
-  sha256: b566e0634f5d2d03001f50e216684eca0c62dd017b53bdfd58ff61c6cd450523
+  sha256: a57092cc3bb17e4afd07a8728f1562cd40f38e0f399e6a12b19584d9e41cdd8f
 
 build:
   number: 1
