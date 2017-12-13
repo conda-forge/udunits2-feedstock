@@ -9,12 +9,11 @@ source:
   sha256: a57092cc3bb17e4afd07a8728f1562cd40f38e0f399e6a12b19584d9e41cdd8f
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: true
   skip: True  # [win and py35]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
     - vc14  # [win and (py35 and py36)]
 
 requirements:
@@ -24,22 +23,20 @@ requirements:
     - automake  # [not win]
     - libtool  # [not win]
     - texinfo  # [not win]
-    - expat
+    - expat 2.2.*
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
     - vc 14  # [win and (py35 and py36)]
   run:
-    - expat
+    - expat 2.2.*
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
     - vc 14  # [win and (py35 and py36)]
 
 test:
   commands:
     - udunits2 -h
     - udunits2 -H meter -W miles  # [not win]
-    - conda inspect linkages -p $PREFIX udunits2  # [not win]
-    - conda inspect objects -p $PREFIX udunits2  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.unidata.ucar.edu/software/udunits/
