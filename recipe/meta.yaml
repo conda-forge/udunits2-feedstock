@@ -9,7 +9,7 @@ source:
   sha256: b7149332e80fb306f3041451a9b7c9237f7ccde85dbedcb234d2b4cccf987711
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
   skip: True  # [win and py35]
   # Abandon py27+win support, like libnetcdf.
@@ -33,7 +33,7 @@ requirements:
 test:
   commands:
     - udunits2 -h
-    - udunits2 -H meter -W miles  # [not win]
+    - udunits2 -H meter -W miles
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
