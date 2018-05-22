@@ -1,4 +1,4 @@
-{% set version = "2.2.26" %}
+{% set version = "2.2.25" %}
 
 package:
   name: udunits2
@@ -6,15 +6,14 @@ package:
 
 source:
   url: https://github.com/Unidata/UDUNITS-2/archive/v{{ version }}.tar.gz
-  sha256: b7149332e80fb306f3041451a9b7c9237f7ccde85dbedcb234d2b4cccf987711
+  sha256: a57092cc3bb17e4afd07a8728f1562cd40f38e0f399e6a12b19584d9e41cdd8f
 
 build:
-  number: 1
+  number: 3
   detect_binary_files_with_prefix: true
   skip: True  # [win and py35]
-  # Abandon py27+win support, like libnetcdf.
-  skip: True  # [win and py27]
   features:
+    - vc9  # [win and py27]
     - vc14  # [win and (py35 and py36)]
 
 requirements:
@@ -25,9 +24,11 @@ requirements:
     - libtool  # [not win]
     - texinfo  # [not win]
     - expat 2.2.*
+    - vc 9  # [win and py27]
     - vc 14  # [win and (py35 and py36)]
   run:
     - expat 2.2.*
+    - vc 9  # [win and py27]
     - vc 14  # [win and (py35 and py36)]
 
 test:
