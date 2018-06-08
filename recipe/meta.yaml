@@ -1,4 +1,4 @@
-{% set version = "2.2.26" %}
+{% set version = "2.2.27" %}
 
 package:
   name: udunits2
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/Unidata/UDUNITS-2/archive/v{{ version }}.tar.gz
-  sha256: b7149332e80fb306f3041451a9b7c9237f7ccde85dbedcb234d2b4cccf987711
+  sha256: 5efbc6d4cf0770281b6bd02d7691b493f92b0e01d7efb62f87b0b3ab15b3e537
 
 build:
-  number: 1
+  number: 0
   detect_binary_files_with_prefix: true
   skip: True  # [win and py35]
   # Abandon py27+win support, like libnetcdf.
