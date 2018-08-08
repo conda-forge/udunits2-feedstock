@@ -11,31 +11,27 @@ source:
 build:
   number: 0
   detect_binary_files_with_prefix: true
-  skip: True  # [win and py35]
-  # Abandon py27+win support, like libnetcdf.
-  skip: True  # [win and py27]
-  features:
-    - vc14  # [win and (py35 and py36)]
+  skip: True  # [win and vc<14]
 
 requirements:
   build:
-    - python  # [win]
+    - {{ compiler('c') }}
     - cmake  # [win]
+    - autoconf  # [not win]
     - automake  # [not win]
     - libtool  # [not win]
     - texinfo  # [not win]
-    - expat 2.2.*
-    - vc 14  # [win and (py35 and py36)]
+    - flex
+    - bison
+  host:
+    - expat
   run:
-    - expat 2.2.*
-    - vc 14  # [win and (py35 and py36)]
+    - expat
 
 test:
   commands:
     - udunits2 -h
     - udunits2 -H meter -W miles
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.unidata.ucar.edu/software/udunits/
