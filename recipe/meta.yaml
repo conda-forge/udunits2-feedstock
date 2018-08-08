@@ -9,26 +9,23 @@ source:
   sha256: b7149332e80fb306f3041451a9b7c9237f7ccde85dbedcb234d2b4cccf987711
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: true
   skip: True  # [win and py35]
-  # Abandon py27+win support, like libnetcdf.
-  skip: True  # [win and py27]
-  features:
-    - vc14  # [win and (py35 and py36)]
+  # Abandon vc<14+win support, like libnetcdf.
+  skip: True  # [win and vc<14]
 
 requirements:
   build:
-    - python  # [win]
     - cmake  # [win]
     - automake  # [not win]
     - libtool  # [not win]
+    - {{ compiler('c') }}
+  host:
     - texinfo  # [not win]
-    - expat 2.2.*
-    - vc 14  # [win and (py35 and py36)]
+    - expat
   run:
-    - expat 2.2.*
-    - vc 14  # [win and (py35 and py36)]
+    - expat
 
 test:
   commands:
