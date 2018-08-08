@@ -1,18 +1,18 @@
 #!/bin/bash
 
-if [ ! -f configure ];
-then
-   autoreconf -i --force
+autoreconf -vfi
+
+export LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+export CFLAGS="${CFLAGS} -I${PREFIX}/include"
+
+if [[ $(uname) == Darwin ]]; then
+  export LDFLAGS="${LDFLAGS} -Wl,-rpath,${PREFIX}/lib"
 fi
 
-if [[ $(uname) != Darwin ]]; then
-    export LDFLAGS="-L$PREFIX/lib"
-    export CFLAGS="-fPIC -I$PREFIX/include"
-fi
-
-./configure --prefix=$PREFIX
-
-make
+./configure --prefix=${PREFIX}  \
+            --enable-static     \
+            --enable-shared
+make -j${CPU_COUNT} ${VERBOSE_AT}
 make check
 make install
 
