@@ -14,14 +14,16 @@ Summary: The UDUNITS package supports units of physical quantities.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/udunits2-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/udunits2-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/udunits2-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/udunits2-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/udunits2-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/udunits2-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/udunits2-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/udunits2-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/udunits2-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/udunits2-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/udunits2/badges/version.svg)](https://anaconda.org/conda-forge/udunits2)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/udunits2/badges/downloads.svg)](https://anaconda.org/conda-forge/udunits2)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-udunits2-green.svg)](https://anaconda.org/conda-forge/udunits2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/udunits2.svg)](https://anaconda.org/conda-forge/udunits2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/udunits2.svg)](https://anaconda.org/conda-forge/udunits2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/udunits2.svg)](https://anaconda.org/conda-forge/udunits2) |
 
 Installing udunits2
 ===================
