@@ -1,0 +1,7 @@
+c_compiler:
+- toolchain_c
+expat:
+- '2.2'
+pin_run_as_build:
+  expat:
+    max_pin: x.x
