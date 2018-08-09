@@ -21,8 +21,6 @@ requirements:
     - automake  # [not win]
     - libtool  # [not win]
     - texinfo  # [not win]
-    - flex
-    - bison
   host:
     - expat
   run:
