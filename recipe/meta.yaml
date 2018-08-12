@@ -1,4 +1,4 @@
-{% set version = "2.2.26" %}
+{% set version = "2.2.27.6" %}
 
 package:
   name: udunits2
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/Unidata/UDUNITS-2/archive/v{{ version }}.tar.gz
-  sha256: b7149332e80fb306f3041451a9b7c9237f7ccde85dbedcb234d2b4cccf987711
+  sha256: 74fd7fb3764ce2821870fa93e66671b7069a0c971513bf1904c6b053a4a55ed1
 
 build:
-  number: 2
+  number: 0
   detect_binary_files_with_prefix: true
   skip: True  # [win and vc<14]
 
