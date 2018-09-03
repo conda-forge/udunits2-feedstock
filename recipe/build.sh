@@ -29,3 +29,6 @@ mkdir -p $DEACTIVATE_DIR
 
 cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/udunits2-activate.sh
 cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/udunits2-deactivate.sh
+
+# We can remove this when we start using the new conda-build.
+find $PREFIX -name '*.la' -delete
