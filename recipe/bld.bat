@@ -26,6 +26,9 @@ cd prog
 dir
 cd ..
 
+echo Scripts: %SCRIPTS%
+dir %SCRIPTS%
+
 copy prog\udunits2.exe %SCRIPTS%\udunits2.exe || exit 1
 
 cd lib
