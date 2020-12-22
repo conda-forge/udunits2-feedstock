@@ -27,10 +27,20 @@ dir
 cd ..
 
 copy prog\udunits2.exe %SCRIPTS%\udunits2.exe || exit 1
+
+cd lib
+dir
+cd ..
+
 copy lib\udunits2.dll %SCRIPTS%\udunits2.dll || exit 1
+
+echo marker1
 copy ..\lib\*.h %LIBRARY_INC%\ || exit 1
+echo marker2
 copy lib\*.exp %LIBRARY_LIB%\ || exit 1
+echo marker3
 copy lib\*.lib %LIBRARY_LIB%\ || exit 1
+echo marker4
 
 set ACTIVATE_DIR=%PREFIX%\etc\conda\activate.d
 set DEACTIVATE_DIR=%PREFIX%\etc\conda\deactivate.d
