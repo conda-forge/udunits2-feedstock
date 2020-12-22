@@ -33,7 +33,7 @@ test:
 
 about:
   home: http://www.unidata.ucar.edu/software/udunits/
-  license: UCAR OSI approved
+  license: LicenseRef-BSD-UCAR  # OSI approved
   license_file: COPYRIGHT
   summary: 'The UDUNITS package supports units of physical quantities.'
 
