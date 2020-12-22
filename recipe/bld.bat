@@ -22,6 +22,8 @@ if errorlevel 1 exit 1
 nmake libudunits2 || exit 1
 nmake udunits2 || exit 1
 
+mkdir %SCRIPTS%
+
 cd prog
 dir
 cd ..
