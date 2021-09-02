@@ -27,8 +27,11 @@ DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
 mkdir -p $ACTIVATE_DIR
 mkdir -p $DEACTIVATE_DIR
 
-cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/udunits2-activate.sh
-cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/udunits2-deactivate.sh
+for EXT in sh csh fish
+do
+  cp $RECIPE_DIR/scripts/activate.$EXT $ACTIVATE_DIR/udunits2-activate.$EXT
+  cp $RECIPE_DIR/scripts/deactivate.$EXT $DEACTIVATE_DIR/udunits2-deactivate.$EXT
+done
 
 # We can remove this when we start using the new conda-build.
 find $PREFIX -name '*.la' -delete
