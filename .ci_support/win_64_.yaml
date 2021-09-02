@@ -5,10 +5,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 expat:
-- '2.3'
-pin_run_as_build:
-  expat:
-    max_pin: x.x
+- '2'
 target_platform:
 - win-64
 vc:

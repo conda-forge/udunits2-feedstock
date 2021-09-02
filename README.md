@@ -97,6 +97,7 @@ Installing `udunits2` from the `conda-forge` channel can be achieved by adding `
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `udunits2` can be installed with:
@@ -179,5 +180,6 @@ Feedstock Maintainers
 * [@kwilcox](https://github.com/kwilcox/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@pelson](https://github.com/pelson/)
+* [@xylar](https://github.com/xylar/)
 * [@zklaus](https://github.com/zklaus/)
 

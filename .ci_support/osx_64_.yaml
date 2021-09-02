@@ -9,11 +9,8 @@ channel_sources:
 channel_targets:
 - conda-forge main
 expat:
-- '2.3'
+- '2'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-pin_run_as_build:
-  expat:
-    max_pin: x.x
 target_platform:
 - osx-64
