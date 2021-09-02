@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Restore previous env vars if they were set
 
 unset UDUNITS2_XML_PATH
