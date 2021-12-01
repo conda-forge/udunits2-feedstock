@@ -13,7 +13,9 @@ fi
             --enable-static     \
             --enable-shared
 make -j${CPU_COUNT} ${VERBOSE_AT}
-make check
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" ]]; then
+    make check
+fi
 make install
 
 if [[ $(uname) == Darwin ]]; then
