@@ -1,15 +1,17 @@
-{% set version = "2.2.27.27" %}
+{% set version = "2.2.28" %}
 
 package:
   name: udunits2
   version: {{ version }}
 
 source:
-  url: https://github.com/Unidata/UDUNITS-2/archive/v{{ version }}.tar.gz
-  sha256: 6c65b3097ef38b94c01dfede8904346c1439de9704b9bae7deea72bd5143a7bb
+  url: https://artifacts.unidata.ucar.edu/repository/downloads-udunits/{{ version }}/udunits-{{ version }}.tar.gz  # [not win]
+  sha256: 590baec83161a3fd62c00efa66f6113cec8a7c461e3f61a5182167e0cc5d579e  # [not win]
+  url: https://artifacts.unidata.ucar.edu/repository/downloads-udunits/{{ version }}/udunits-{{ version }}.zip  # [win]
+  sha256: e09d31db68f9a840a0663c7e9909101957733ff0310761b9906f4722e0d92c44  # [win]
 
 build:
-  number: 3
+  number: 0
   detect_binary_files_with_prefix: true
   skip: True  # [win and vc<14]
 
