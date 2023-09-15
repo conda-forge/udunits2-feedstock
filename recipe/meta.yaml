@@ -26,8 +26,6 @@ requirements:
     - texinfo  # [not win]
   host:
     - expat
-  run:
-    - expat
 
 test:
   commands:
