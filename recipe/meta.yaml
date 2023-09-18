@@ -11,9 +11,11 @@ source:
   sha256: e09d31db68f9a840a0663c7e9909101957733ff0310761b9906f4722e0d92c44  # [win]
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
   skip: True  # [win and vc<14]
+  run_exports:
+    - {{ pin_subpackage('udunits2') }}
 
 requirements:
   build:
@@ -25,8 +27,6 @@ requirements:
     - libtool  # [not win]
     - texinfo  # [not win]
   host:
-    - expat
-  run:
     - expat
 
 test:
