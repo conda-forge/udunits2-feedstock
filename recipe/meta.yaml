@@ -1,7 +1,7 @@
 {% set version = "2.2.28" %}
 
 package:
-  name: udunits2
+  name: udunits2-split
   version: {{ version }}
 
 source:
@@ -34,6 +34,50 @@ test:
     - udunits2 -h
     - udunits2 -H meter -W miles
 
+outputs:
+  - name: libudunits2
+    script: install.sh  # [unix]
+    script: install.bat  # [win]
+    files:
+      - lib/libudunits2.so.*  # [linux]
+      - lib/libudunits2.*.dylib  # [osx]
+      - Library/bin/udunits2.dll  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - cmake  # [win]
+        - make  # [not win]
+        - autoconf  # [not win]
+        - automake  # [not win]
+        - libtool  # [not win]
+        - texinfo  # [not win]
+      host:
+        - expat
+      run:
+      run_constrained:
+        - udunits2 {{ version }}.*
+
+  - name: udunits2
+    script: install.sh  # [unix]
+    script: install.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage('libudunits2') }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - cmake  # [win]
+        - make  # [not win]
+        - autoconf  # [not win]
+        - automake  # [not win]
+        - libtool  # [not win]
+        - texinfo  # [not win]
+      host:
+        - expat
+        - {{ pin_subpackage('libudunits2', exact=True) }}
+      run:
+        - {{ pin_subpackage('libudunits2', exact=True) }}
+
 about:
   home: http://www.unidata.ucar.edu/software/udunits/
   license: LicenseRef-BSD-UCAR
@@ -41,6 +85,7 @@ about:
   summary: 'The UDUNITS package supports units of physical quantities.'
 
 extra:
+  feedstock-name: udunits2
   recipe-maintainers:
     - kwilcox
     - ocefpaf
