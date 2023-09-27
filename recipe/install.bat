@@ -1,5 +1,10 @@
 @echo on
 
+:: Install the udunits2 xml files.
+mkdir %LIBRARY_PREFIX%\share
+mkdir %LIBRARY_PREFIX%\share\udunits
+copy .\lib\*.xml %LIBRARY_PREFIX%\share\udunits\ || exit 1
+
 cd build
 
 mkdir %SCRIPTS%

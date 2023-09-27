@@ -3,11 +3,6 @@ set LIB=%LIBRARY_LIB%;.\lib;%LIB%
 set LIBPATH=%LIBRARY_LIB%;.\lib;%LIBPATH%
 set INCLUDE=%LIBRARY_INC%;%INCLUDE%
 
-:: Install the udunits2 xml files.
-mkdir %LIBRARY_PREFIX%\share
-mkdir %LIBRARY_PREFIX%\share\udunits
-copy .\lib\*.xml %LIBRARY_PREFIX%\share\udunits\ || exit 1
-
 copy %RECIPE_DIR%\unistd.h %SRC_DIR% || exit 1
 
 mkdir build
