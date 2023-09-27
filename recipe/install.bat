@@ -1,3 +1,5 @@
+@echo on
+
 mkdir %SCRIPTS%
 
 copy prog\udunits2.exe %SCRIPTS%\udunits2.exe || exit 1
