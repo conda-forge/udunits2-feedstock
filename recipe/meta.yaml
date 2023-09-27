@@ -39,7 +39,7 @@ outputs:
     files:
       - lib/libudunits2.so.*  # [linux]
       - lib/libudunits2.*.dylib  # [osx]
-      - Library/Scripts/udunits2.dll  # [win]
+      - Scripts/udunits2.dll  # [win]
       - Library/share/udunits/*.xml  # [win]
     requirements:
       build:
