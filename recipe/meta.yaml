@@ -42,6 +42,14 @@ outputs:
       - share/udunits/*.xml  # [not win]
       - Scripts/udunits2.dll  # [win]
       - Library/share/udunits/*.xml  # [win]
+      - etc/conda/activate.d/udunits2-activate.bat  # [win]
+      - etc/conda/deactivate.d/udunits2-deactivate.bat  # [win]
+      - etc/conda/activate.d/udunits2-activate.sh  # Needed also for win
+      - etc/conda/deactivate.d/udunits2-deactivate.sh  # to support bash users
+      - etc/conda/activate.d/udunits2-activate.csh  # [not win]
+      - etc/conda/deactivate.d/udunits2-deactivate.csh  # [not win]
+      - etc/conda/activate.d/udunits2-activate.fish  # [not win]
+      - etc/conda/deactivate.d/udunits2-deactivate.fish  # [not win]
     requirements:
       build:
         - {{ compiler('c') }}
