@@ -88,6 +88,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libudunits2-green.svg)](https://anaconda.org/conda-forge/libudunits2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libudunits2.svg)](https://anaconda.org/conda-forge/libudunits2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libudunits2.svg)](https://anaconda.org/conda-forge/libudunits2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libudunits2.svg)](https://anaconda.org/conda-forge/libudunits2) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-udunits2-green.svg)](https://anaconda.org/conda-forge/udunits2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/udunits2.svg)](https://anaconda.org/conda-forge/udunits2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/udunits2.svg)](https://anaconda.org/conda-forge/udunits2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/udunits2.svg)](https://anaconda.org/conda-forge/udunits2) |
 
 Installing udunits2
@@ -100,41 +101,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `udunits2` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libudunits2, udunits2` can be installed with `conda`:
 
 ```
-conda install udunits2
-```
-
-or with `mamba`:
-
-```
-mamba install udunits2
-```
-
-It is possible to list all of the versions of `udunits2` available on your platform with `conda`:
-
-```
-conda search udunits2 --channel conda-forge
+conda install libudunits2 udunits2
 ```
 
 or with `mamba`:
 
 ```
-mamba search udunits2 --channel conda-forge
+mamba install libudunits2 udunits2
+```
+
+It is possible to list all of the versions of `libudunits2` available on your platform with `conda`:
+
+```
+conda search libudunits2 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libudunits2 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search udunits2 --channel conda-forge
+mamba repoquery search libudunits2 --channel conda-forge
 
-# List packages depending on `udunits2`:
-mamba repoquery whoneeds udunits2 --channel conda-forge
+# List packages depending on `libudunits2`:
+mamba repoquery whoneeds libudunits2 --channel conda-forge
 
-# List dependencies of `udunits2`:
-mamba repoquery depends udunits2 --channel conda-forge
+# List dependencies of `libudunits2`:
+mamba repoquery depends libudunits2 --channel conda-forge
 ```
 
 
